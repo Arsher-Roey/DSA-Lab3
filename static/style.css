@@ -1,0 +1,940 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:weight@300;400;500;600;700;800;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: #081b29;
+  color: #ededed;
+}
+
+/* --- Navbar Style Upgrade --- */
+.header {
+  background: #081b29;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 8vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.logo {
+  font-size: 25px;
+  color: #ededed;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+
+  /* Frosted Glass Effect */
+.nav-container {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(15px);
+  padding: 10px 40px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  z-index: 100;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  position: relative;
+  gap: 2rem;
+}
+
+/* Navbar links */
+.navbar a {
+  color: #ededed;
+  position: relative;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 5px 0;
+  transition: color 0.3s ease;
+}
+
+/* Underline bloom animation */
+.navbar a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%) scaleX(0);
+  transform-origin: center;
+  width: 100%;
+  height: 2px;
+  background: #00abf0;
+  transition: transform 0.3s ease;
+}
+
+.navbar a:hover::after,
+.navbar a.active::after {
+  transform: translateX(-50%) scaleX(1);
+}
+
+/* Hover and Active Text Color */
+.navbar a:hover,
+.navbar a.active {
+  color: #00abf0;
+}
+
+.nav-work {
+  position: relative;
+}
+
+.nav-work .bxs-chevron-down {
+  position: relative;
+  font-size: 18px;
+  color: #ededed;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.nav-work:hover .bxs-chevron-down {
+  transform: rotate(180deg);
+  color: #00abf0;
+}
+
+.dropdowns {
+  position: absolute;
+  border: 1px inset #ededed;
+  top: 125%;  /* appear below Works */
+  left: 0;
+  background: #081b29;
+  border-radius: 6px;
+  padding: 10px 0;
+  min-width: 180px;
+  list-style: none;
+  display: none; /* hidden by default */
+  z-index: 100;
+}
+
+.nav-work:hover .dropdowns {
+  display: block;
+}
+
+.nav-work:hover .dropdowns {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.dropdowns {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+.dropdowns li {
+  display: block;
+  padding: 8px 5px 3px 10px;
+  color: #ededed;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.dropdowns li:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: #00abf0;
+}
+
+.nav-work:hover .dropdowns {
+  opacity: 1;
+  transform: translateY(0);
+  display: block;
+}
+
+/* ========== HOME PAGE ========== */
+
+.home {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 0 10%;
+}
+.home-content {
+  max-width: 600px
+}
+.home-content h1 {
+  font-size: 56px;
+  font-weight: 700;
+  line-weight: 1.2;
+}
+.home-content h3 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #00abf0;
+}
+.home-content p {
+  font-size: 16px;
+  margin: 20px 0 40px;
+}
+
+.home-content .btn-box {
+  display: flex;
+  justify-content: space-between;
+  width: 345px;
+  height: 50px;
+}
+
+.btn-box a {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 100%;
+  background: #00abf0;
+  border: 2px solid #00abf0;
+  border-radius: 8px;
+  font-size: 19px;
+  text-decoration: none;
+  color: #081b29;
+  font-weight: 600;
+  letter-spacing: 1px;
+  z-index: 1;
+  overflow: hidden;
+  transition: .5s;
+}
+
+.btn-box a:hover {
+  color: #00abf0;
+}
+
+.btn-box a:nth-child(2) {
+  background: transparent;
+  color: #00abf0;
+}
+
+.btn-box a:nth-child(2):hover {
+  color: #081b29;
+}
+
+.btn-box a:nth-child(2)::before {
+  background: #00abf0;
+}
+
+.btn-box a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: #081b29;
+  z-index: -1;
+  transition: .3s;
+} 
+
+.btn-box a:hover::before {
+  width: 100%;
+}
+
+.home-sci {
+  position: absolute;
+  bottom: 40px;
+  width: 170px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.home-sci a {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: 2px solid #00abf0;
+  border-radius: 50%;
+  font-size: 20px;
+  color: #00abf0;
+  text-decoration: none;
+  z-index: 1;
+  overflow: hidden;
+  transition: .5s;
+}
+
+.home-sci a:hover {
+  color: #081b28;
+}
+
+.home-sci a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: #00abf0;
+  z-index: -1;
+  transition: .5s;
+}
+
+.home-sci a:hover::before {
+  width: 100%;
+}
+
+/* ========== PROFILE PAGE ========== */
+.profile {
+  display: flex;
+  align-items: flex-start;
+  margin-top: 100px;
+  display: flex;
+  padding: 10% 10%;
+  gap: 50px;
+}
+
+.profile .front-1x1{
+  border-radius: 50%;
+  border: 2px solid #00abf0;
+  width: 250px;
+  height: 300px;
+  object-fit: cover;
+}
+
+.profile-content {
+  max-width: 700px;
+  width: 100%;
+  padding: 0 10px 10px 10px;
+}
+.profile-content h1 {
+  margin: 0;
+  font-size: 50px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #ededed;
+  white-space: nowrap;
+}
+
+::selection{
+  background-color: green;
+}
+.tabbed {
+  border-radius: 5%;
+  font-size: 14px; 
+  width: 100%;
+  margin: 5px 0px;
+}
+
+.tabbed > input{
+  display: none;
+}
+
+.tabbed > label{
+  display: block;
+  float: left;
+  padding: 8px 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.tabbed > input:checked + label {
+  background-color: #00abf0;
+}
+
+.tabbed>label:hover {
+  background-color: #00abf0;
+}
+
+.tabs {
+  clear: both;
+  perspective: 600px;
+  height: auto;
+  min-height: 300px;
+}
+
+.tabs > div {
+  width: 100%;
+  position: absolute;
+  border: 2px solid #00abf0;
+  padding: 10px 20px 15px;
+  line-height: 1-4em;
+  opacity: 0;
+  z-index: 0;
+  transform-origin: top center;
+  transition: opacity 0.3s;
+}
+
+.tabs > div h2 {
+  padding: 5px 0px 5px 0px;
+}
+
+#info:checked ~ .tabs > div:nth-of-type(1),
+#education:checked ~ .tabs > div:nth-of-type(2),
+#workexp:checked ~ .tabs > div:nth-of-type(3),
+#certificates:checked ~ .tabs > div:nth-of-type(4),
+#skills:checked ~ .tabs > div:nth-of-type(5){
+  opacity: 1;
+  z-index: 1;
+}
+
+/* Animation */
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+body p, body h1, body h2, body h3 {
+  animation: fadeUp 1s ease forwards;
+}
+
+/* WORK PAGE */
+.work-page {
+  margin-top: 125px;
+  margin-left: 5px;
+  align-items: center;       /* centers vertically */
+  height: 100vh;             /* full viewport height */
+  text-align: center;
+  z-index: 10;
+}
+
+.work-page h1 {
+  margin-left: 80px;
+  text-align: left;
+  white-space: nowrap;       /* force text into one line */
+  font-size: 3rem;           /* adjust size as you like */
+  letter-spacing: 2px;       /* spacing between letters */
+  color: #ededed;            /* example color */
+}
+
+/* Container for all cards */
+.card-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;             /* space between cards */
+  flex-wrap: wrap;       /* responsive for small screens */
+  margin-top: 30px;
+}
+
+/* Each individual card */
+.card {
+  display: block;
+  position: relative;
+  width: 300px;
+  height: 335px;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+
+/* Image styling */
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: all 0.5s ease;
+}
+
+/* On hover — image zooms + blurs slightly */
+.card:hover img {
+  transform: scale(1.1);
+  filter: blur(3px) brightness(0.8);
+}
+
+/* Overlay for text */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #ededed;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  background: rgba(0, 0, 0, 0.3); /* optional dark glass */
+  backdrop-filter: blur(2px);
+}
+
+/* When hovered, show overlay */
+.card:hover .overlay {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Overlay text styling */
+.overlay h2 {
+  letter-spacing: 1px;
+  font-size: 30px;;
+  margin-bottom: 8px;
+}
+
+.overlay p {
+  font-size: 15px;
+  opacity: 1;
+}
+
+/* footer */
+.footer {
+  background-color: #111;
+  color: #eee;
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 50px;
+  font-size: 14px;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer .socials a {
+  color: #00abf0;
+  margin: 0 10px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.footer .socials a:hover {
+  color: #fff;
+}
+
+/* ========================================================== */
+/* A. PAGE-SPECIFIC LAYOUT FIX (Using ID, NO general 'main{}') */
+/* ========================================================== */
+#touppercase-main-layout {
+    /* Pushes content down past the fixed header */
+    padding-top: 100px; 
+    
+    /* CRITICAL: Use Flexbox on this specific page's main tag to center the content */
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: flex-start; /* Start near the top */
+    min-height: 100vh;
+}
+
+/* ========================================================== */
+/* B. Main Converter Panel (.touppercase) Styles */
+/* ========================================================== */
+.touppercase {
+    /* Slightly lighter dark background than the body for contrast */
+    background-color: #1f2732; 
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+    max-width: 500px;
+    width: 90%;
+    
+    /* Auto margins are good practice, even with flex center */
+    margin: 30px 0; 
+    
+    border: 1px solid #00abf0; /* Blue accent border */
+    text-align: center;
+}
+
+.touppercase h1 {
+    color: #00abf0; /* Blue accent color for the title */
+    margin-bottom: 25px;
+    font-size: 2em;
+    font-weight: 700;
+    border-bottom: 2px solid rgba(0, 171, 240, 0.3);
+    padding-bottom: 15px;
+}
+
+/* --- Form and Input Container (.container) --- */
+.container {
+    margin-bottom: 20px;
+}
+
+.container form {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 15px;
+}
+
+.touppercase label {
+    text-align: left;
+    font-weight: 500;
+    color: #ededed;
+    font-size: 1.1em;
+}
+
+.touppercase input[type="text"] {
+    padding: 12px;
+    border: 1px solid #00abf0;
+    border-radius: 5px;
+    font-size: 1em;
+    background-color: #081b29; 
+    color: #ededed;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.touppercase input[type="text"]:focus {
+    border-color: #00abf0;
+    box-shadow: 0 0 8px rgba(0, 171, 240, 0.6);
+    outline: none;
+}
+
+/* --- Submit Button --- */
+.touppercase input[type="submit"] {
+    background-color: #00abf0;
+    color: #081b29;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: 600;
+    transition: background-color 0.3s, transform 0.1s;
+    margin-top: 20px;
+}
+
+.touppercase input[type="submit"]:hover {
+    background-color: #008cc9;
+    box-shadow: 0 0 10px rgba(0, 171, 240, 0.5);
+}
+
+/* --- Result Display (The paragraph element) --- */
+.touppercase .result-display {
+    background-color: #081b29; 
+    color: #28a745; 
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid #28a745;
+    font-size: 1.1em;
+    margin-top: 30px;
+    text-align: left;
+    font-weight: 600;
+    word-wrap: break-word; 
+}
+
+/* ========================================================== */
+/* A. PAGE-SPECIFIC LAYOUT FIX for Area of Circle */
+/* ========================================================== */
+#circle-main-layout {
+    /* Pushes content down past the fixed header */
+    padding-top: 100px; 
+    
+    /* CRITICAL: Use Flexbox on this specific page's main tag to center the content */
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: flex-start; /* Start near the top */
+    min-height: 100vh;
+}
+
+/* ========================================================== */
+/* B. Area of Circle Panel (.areaofcircle) Styles */
+/* ========================================================== */
+.areaofcircle {
+    /* Copy the core BOX styles from .touppercase */
+    background-color: #1f2732; 
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+    max-width: 500px;
+    width: 90%;
+    
+    margin: 30px 0; 
+    
+    border: 1px solid #00abf0; /* Blue accent border */
+    text-align: center;
+}
+
+/* Ensure the h1 inherits the blue title style */
+.areaofcircle h1 {
+    color: #00abf0; 
+    margin-bottom: 25px;
+    font-size: 2em;
+    font-weight: 700;
+    border-bottom: 2px solid rgba(0, 171, 240, 0.3);
+    padding-bottom: 15px;
+}
+
+/* Ensure the form container works */
+.areaofcircle .container {
+    margin-bottom: 20px;
+}
+
+.areaofcircle .container form {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 15px;
+}
+
+.areaofcircle label {
+    text-align: left;
+    font-weight: 500;
+    color: #ededed;
+    font-size: 1.1em;
+}
+
+/* Style the number input field */
+.areaofcircle input[type="number"] {
+    padding: 12px;
+    border: 1px solid #00abf0;
+    border-radius: 5px;
+    font-size: 1em;
+    background-color: #081b29; 
+    color: #ededed;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.areaofcircle input[type="number"]:focus {
+    border-color: #00abf0;
+    box-shadow: 0 0 8px rgba(0, 171, 240, 0.6);
+    outline: none;
+}
+
+/* Style the submit button */
+.areaofcircle input[type="submit"] {
+    background-color: #00abf0;
+    color: #081b29;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: 600;
+    transition: background-color 0.3s, transform 0.1s;
+    margin-top: 20px;
+}
+
+.areaofcircle input[type="submit"]:hover {
+    background-color: #008cc9;
+    box-shadow: 0 0 10px rgba(0, 171, 240, 0.5);
+}
+
+/* Style the result paragraph */
+.areaofcircle .result-display {
+    background-color: #081b29; 
+    color: #28a745; 
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid #28a745;
+    font-size: 1.1em;
+    margin-top: 30px;
+    text-align: left;
+    font-weight: 600;
+    word-wrap: break-word; 
+}
+
+/* ========================================================== */
+/* A. PAGE-SPECIFIC LAYOUT FIX for Area of Triangle */
+/* ========================================================== */
+#triangle-main-layout {
+    /* Pushes content down past the fixed header */
+    padding-top: 100px; 
+    
+    /* CRITICAL: Use Flexbox on this specific page's main tag to center the content */
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: flex-start; /* Start near the top */
+    min-height: 100vh;
+}
+
+/* ========================================================== */
+/* B. Area of Triangle Panel (.areaoftriangle) Styles */
+/* ========================================================== */
+.areaoftriangle {
+    /* Copy the core BOX styles from the other calculator sections */
+    background-color: #1f2732; 
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+    max-width: 500px;
+    width: 90%;
+    
+    margin: 30px 0; 
+    
+    border: 1px solid #00abf0; /* Blue accent border */
+    text-align: center;
+}
+
+/* Ensure the h1 inherits the blue title style */
+.areaoftriangle h1 {
+    color: #00abf0; 
+    margin-bottom: 25px;
+    font-size: 2em;
+    font-weight: 700;
+    border-bottom: 2px solid rgba(0, 171, 240, 0.3);
+    padding-bottom: 15px;
+}
+
+/* Ensure the form container works */
+.areaoftriangle .container {
+    margin-bottom: 20px;
+}
+
+.areaoftriangle .container form {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 15px;
+}
+
+.areaoftriangle label {
+    text-align: left;
+    font-weight: 500;
+    color: #ededed;
+    font-size: 1.1em;
+}
+
+/* Style the number input field */
+.areaoftriangle input[type="number"] {
+    padding: 12px;
+    border: 1px solid #00abf0;
+    border-radius: 5px;
+    font-size: 1em;
+    background-color: #081b29; 
+    color: #ededed;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.areaoftriangle input[type="number"]:focus {
+    border-color: #00abf0;
+    box-shadow: 0 0 8px rgba(0, 171, 240, 0.6);
+    outline: none;
+}
+
+/* Style the submit button */
+.areaoftriangle input[type="submit"] {
+    background-color: #00abf0;
+    color: #081b29;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: 600;
+    transition: background-color 0.3s, transform 0.1s;
+    margin-top: 20px;
+}
+
+.areaoftriangle input[type="submit"]:hover {
+    background-color: #008cc9;
+    box-shadow: 0 0 10px rgba(0, 171, 240, 0.5);
+}
+
+/* Style the result paragraph */
+.areaoftriangle .result-display {
+    background-color: #081b29; 
+    color: #28a745; 
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid #28a745;
+    font-size: 1.1em;
+    margin-top: 30px;
+    text-align: left;
+    font-weight: 600;
+    word-wrap: break-word; 
+}
+
+/* ========================================================== */
+/* A. PAGE-SPECIFIC LAYOUT FIX for Contact Info Page */
+/* ========================================================== */
+#contact-main-layout {
+    /* Pushes content down past the fixed header */
+    padding-top: 100px; 
+    
+    /* CRITICAL: Use Flexbox on this specific page's main tag to center the content */
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: flex-start; /* Start near the top */
+    min-height: 100vh;
+}
+
+/* ========================================================== */
+/* B. Contact Info Panel (.contact-info-panel) Styles */
+/* ========================================================== */
+.contact-info-panel {
+    /* Copy the core BOX styles */
+    background-color: #1f2732; 
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+    max-width: 550px; 
+    width: 90%;
+    
+    margin: 30px 0; 
+    
+    border: 1px solid #00abf0; /* Blue accent border */
+    text-align: center;
+}
+
+.contact-info-panel h1 {
+    color: #00abf0; 
+    margin-bottom: 30px;
+    font-size: 2em;
+    font-weight: 700;
+    border-bottom: 2px solid rgba(0, 171, 240, 0.3);
+    padding-bottom: 15px;
+}
+
+/* --- Contact Items Container --- */
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* --- Individual Contact Item (Icon + Text/Link) --- */
+.contact-item {
+    display: flex;
+    align-items: center;
+    text-align: left;
+    background-color: #081b29; /* Darker background for item visibility */
+    padding: 15px;
+    border-radius: 8px;
+    border-left: 5px solid #00abf0; /* Blue vertical accent line */
+    transition: transform 0.2s ease;
+}
+
+.contact-item:hover {
+    transform: translateY(-2px); /* Slight lift on hover */
+    box-shadow: 0 4px 10px rgba(0, 171, 240, 0.2);
+}
+
+/* Icon Styling */
+.contact-item i {
+    font-size: 1.5em;
+    color: #00abf0;
+    margin-right: 15px;
+    min-width: 24px; /* Ensure icon area is consistent */
+}
+
+/* Text and Link Styling */
+.info-text, .info-link {
+    font-size: 1.1em;
+    color: #ededed;
+    text-decoration: none;
+    font-weight: 500;
+    word-break: break-all;
+}
+
+/* Styling for actual links to give the hover effect */
+.info-link:hover {
+    color: #00abf0;
+    text-decoration: underline;
+}
