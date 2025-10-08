@@ -400,8 +400,8 @@ body p, body h1, body h2, body h3 {
 .work-page {
   margin-top: 125px;
   margin-left: 5px;
-  align-items: center;       /* centers vertically */
-  height: 100vh;             /* full viewport height */
+  align-items: center;       
+  height: 100vh;             
   text-align: center;
   z-index: 10;
 }
@@ -409,23 +409,22 @@ body p, body h1, body h2, body h3 {
 .work-page h1 {
   margin-left: 80px;
   text-align: left;
-  white-space: nowrap;       /* force text into one line */
-  font-size: 3rem;           /* adjust size as you like */
-  letter-spacing: 2px;       /* spacing between letters */
-  color: #ededed;            /* example color */
+  white-space: nowrap;       
+  font-size: 3rem;           
+  letter-spacing: 2px;       
+  color: #ededed;            
 }
 
-/* Container for all cards */
+
 .card-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 25px;             /* space between cards */
-  flex-wrap: wrap;       /* responsive for small screens */
+  gap: 25px;          
+  flex-wrap: wrap;       
   margin-top: 30px;
 }
 
-/* Each individual card */
 .card {
   display: block;
   position: relative;
@@ -437,7 +436,6 @@ body p, body h1, body h2, body h3 {
   cursor: pointer;
 }
 
-/* Image styling */
 .card img {
   width: 100%;
   height: 100%;
@@ -446,13 +444,11 @@ body p, body h1, body h2, body h3 {
   transition: all 0.5s ease;
 }
 
-/* On hover — image zooms + blurs slightly */
 .card:hover img {
   transform: scale(1.1);
   filter: blur(3px) brightness(0.8);
 }
 
-/* Overlay for text */
 .overlay {
   position: absolute;
   top: 0;
@@ -468,17 +464,15 @@ body p, body h1, body h2, body h3 {
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.4s ease, transform 0.4s ease;
-  background: rgba(0, 0, 0, 0.3); /* optional dark glass */
+  background: rgba(0, 0, 0, 0.3); 
   backdrop-filter: blur(2px);
 }
 
-/* When hovered, show overlay */
 .card:hover .overlay {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* Overlay text styling */
 .overlay h2 {
   letter-spacing: 1px;
   font-size: 30px;;
@@ -519,41 +513,29 @@ body p, body h1, body h2, body h3 {
   color: #fff;
 }
 
-/* ========================================================== */
-/* A. PAGE-SPECIFIC LAYOUT FIX (Using ID, NO general 'main{}') */
-/* ========================================================== */
 #touppercase-main-layout {
-    /* Pushes content down past the fixed header */
     padding-top: 100px; 
-    
-    /* CRITICAL: Use Flexbox on this specific page's main tag to center the content */
     display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: flex-start; /* Start near the top */
+    justify-content: center; 
+    align-items: flex-start; 
     min-height: 100vh;
 }
 
-/* ========================================================== */
-/* B. Main Converter Panel (.touppercase) Styles */
-/* ========================================================== */
 .touppercase {
-    /* Slightly lighter dark background than the body for contrast */
     background-color: #1f2732; 
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
     max-width: 500px;
     width: 90%;
-    
-    /* Auto margins are good practice, even with flex center */
     margin: 30px 0; 
     
-    border: 1px solid #00abf0; /* Blue accent border */
+    border: 1px solid #00abf0; 
     text-align: center;
 }
 
 .touppercase h1 {
-    color: #00abf0; /* Blue accent color for the title */
+    color: #00abf0; 
     margin-bottom: 25px;
     font-size: 2em;
     font-weight: 700;
@@ -561,7 +543,6 @@ body p, body h1, body h2, body h3 {
     padding-bottom: 15px;
 }
 
-/* --- Form and Input Container (.container) --- */
 .container {
     margin-bottom: 20px;
 }
@@ -596,7 +577,6 @@ body p, body h1, body h2, body h3 {
     outline: none;
 }
 
-/* --- Submit Button --- */
 .touppercase input[type="submit"] {
     background-color: #00abf0;
     color: #081b29;
@@ -615,7 +595,6 @@ body p, body h1, body h2, body h3 {
     box-shadow: 0 0 10px rgba(0, 171, 240, 0.5);
 }
 
-/* --- Result Display (The paragraph element) --- */
 .touppercase .result-display {
     background-color: #081b29; 
     color: #28a745; 
@@ -629,39 +608,26 @@ body p, body h1, body h2, body h3 {
     word-wrap: break-word; 
 }
 
-/* ========================================================== */
-/* A. PAGE-SPECIFIC LAYOUT FIX for Area of Circle */
-/* ========================================================== */
 #circle-main-layout {
-    /* Pushes content down past the fixed header */
     padding-top: 100px; 
-    
-    /* CRITICAL: Use Flexbox on this specific page's main tag to center the content */
     display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: flex-start; /* Start near the top */
+    justify-content: center; 
+    align-items: flex-start; 
     min-height: 100vh;
 }
 
-/* ========================================================== */
-/* B. Area of Circle Panel (.areaofcircle) Styles */
-/* ========================================================== */
 .areaofcircle {
-    /* Copy the core BOX styles from .touppercase */
     background-color: #1f2732; 
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
     max-width: 500px;
     width: 90%;
-    
     margin: 30px 0; 
-    
-    border: 1px solid #00abf0; /* Blue accent border */
+    border: 1px solid #00abf0; 
     text-align: center;
 }
 
-/* Ensure the h1 inherits the blue title style */
 .areaofcircle h1 {
     color: #00abf0; 
     margin-bottom: 25px;
@@ -671,7 +637,6 @@ body p, body h1, body h2, body h3 {
     padding-bottom: 15px;
 }
 
-/* Ensure the form container works */
 .areaofcircle .container {
     margin-bottom: 20px;
 }
@@ -690,7 +655,6 @@ body p, body h1, body h2, body h3 {
     font-size: 1.1em;
 }
 
-/* Style the number input field */
 .areaofcircle input[type="number"] {
     padding: 12px;
     border: 1px solid #00abf0;
@@ -707,7 +671,6 @@ body p, body h1, body h2, body h3 {
     outline: none;
 }
 
-/* Style the submit button */
 .areaofcircle input[type="submit"] {
     background-color: #00abf0;
     color: #081b29;
@@ -726,7 +689,6 @@ body p, body h1, body h2, body h3 {
     box-shadow: 0 0 10px rgba(0, 171, 240, 0.5);
 }
 
-/* Style the result paragraph */
 .areaofcircle .result-display {
     background-color: #081b29; 
     color: #28a745; 
@@ -740,25 +702,15 @@ body p, body h1, body h2, body h3 {
     word-wrap: break-word; 
 }
 
-/* ========================================================== */
-/* A. PAGE-SPECIFIC LAYOUT FIX for Area of Triangle */
-/* ========================================================== */
 #triangle-main-layout {
-    /* Pushes content down past the fixed header */
-    padding-top: 100px; 
-    
-    /* CRITICAL: Use Flexbox on this specific page's main tag to center the content */
+    padding-top: 100px;
     display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: flex-start; /* Start near the top */
+    justify-content: center; 
+    align-items: flex-start; 
     min-height: 100vh;
 }
 
-/* ========================================================== */
-/* B. Area of Triangle Panel (.areaoftriangle) Styles */
-/* ========================================================== */
 .areaoftriangle {
-    /* Copy the core BOX styles from the other calculator sections */
     background-color: #1f2732; 
     padding: 30px;
     border-radius: 10px;
@@ -768,11 +720,10 @@ body p, body h1, body h2, body h3 {
     
     margin: 30px 0; 
     
-    border: 1px solid #00abf0; /* Blue accent border */
+    border: 1px solid #00abf0; 
     text-align: center;
 }
 
-/* Ensure the h1 inherits the blue title style */
 .areaoftriangle h1 {
     color: #00abf0; 
     margin-bottom: 25px;
@@ -782,7 +733,7 @@ body p, body h1, body h2, body h3 {
     padding-bottom: 15px;
 }
 
-/* Ensure the form container works */
+
 .areaoftriangle .container {
     margin-bottom: 20px;
 }
@@ -801,7 +752,6 @@ body p, body h1, body h2, body h3 {
     font-size: 1.1em;
 }
 
-/* Style the number input field */
 .areaoftriangle input[type="number"] {
     padding: 12px;
     border: 1px solid #00abf0;
@@ -818,7 +768,6 @@ body p, body h1, body h2, body h3 {
     outline: none;
 }
 
-/* Style the submit button */
 .areaoftriangle input[type="submit"] {
     background-color: #00abf0;
     color: #081b29;
@@ -837,7 +786,6 @@ body p, body h1, body h2, body h3 {
     box-shadow: 0 0 10px rgba(0, 171, 240, 0.5);
 }
 
-/* Style the result paragraph */
 .areaoftriangle .result-display {
     background-color: #081b29; 
     color: #28a745; 
@@ -851,25 +799,16 @@ body p, body h1, body h2, body h3 {
     word-wrap: break-word; 
 }
 
-/* ========================================================== */
-/* A. PAGE-SPECIFIC LAYOUT FIX for Contact Info Page */
-/* ========================================================== */
 #contact-main-layout {
-    /* Pushes content down past the fixed header */
     padding-top: 100px; 
     
-    /* CRITICAL: Use Flexbox on this specific page's main tag to center the content */
     display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: flex-start; /* Start near the top */
+    justify-content: center; 
+    align-items: flex-start; 
     min-height: 100vh;
 }
 
-/* ========================================================== */
-/* B. Contact Info Panel (.contact-info-panel) Styles */
-/* ========================================================== */
 .contact-info-panel {
-    /* Copy the core BOX styles */
     background-color: #1f2732; 
     padding: 30px;
     border-radius: 10px;
@@ -879,7 +818,7 @@ body p, body h1, body h2, body h3 {
     
     margin: 30px 0; 
     
-    border: 1px solid #00abf0; /* Blue accent border */
+    border: 1px solid #00abf0;
     text-align: center;
 }
 
@@ -892,39 +831,35 @@ body p, body h1, body h2, body h3 {
     padding-bottom: 15px;
 }
 
-/* --- Contact Items Container --- */
 .contact-details {
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
-/* --- Individual Contact Item (Icon + Text/Link) --- */
 .contact-item {
     display: flex;
     align-items: center;
     text-align: left;
-    background-color: #081b29; /* Darker background for item visibility */
+    background-color: #081b29; 
     padding: 15px;
     border-radius: 8px;
-    border-left: 5px solid #00abf0; /* Blue vertical accent line */
+    border-left: 5px solid #00abf0;
     transition: transform 0.2s ease;
 }
 
 .contact-item:hover {
-    transform: translateY(-2px); /* Slight lift on hover */
+    transform: translateY(-2px); 
     box-shadow: 0 4px 10px rgba(0, 171, 240, 0.2);
 }
 
-/* Icon Styling */
 .contact-item i {
     font-size: 1.5em;
     color: #00abf0;
     margin-right: 15px;
-    min-width: 24px; /* Ensure icon area is consistent */
+    min-width: 24px; 
 }
 
-/* Text and Link Styling */
 .info-text, .info-link {
     font-size: 1.1em;
     color: #ededed;
