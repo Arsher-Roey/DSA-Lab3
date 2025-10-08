@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block title %}Home | Arsher{% endblock %}
+
+{% block content %}
+  <section class="work-page">
+    <div class="work-content">
+      <h1>My Works</h1>
+    </div>
+    
+    <div class="card-container">
+      <a href="/touppercase" class="card">
+        <img src="{{ url_for('static', filename='images/LETTERS.jpg') }}" alt="Work 1">
+        <div class="overlay">
+          <h2>To Uppercase</h2>
+          <p>Converting Lowercase Letters to Uppercase</p>
+        </div>
+      </a>
+      
+      <a href="/areaofcircle" class="card">
+        <img src="{{ url_for('static', filename='images/circles.jpg') }}" alt="Work 2">
+        <div class="overlay">
+          <h2>Area of Circle</h2>
+          <p>Calculate Area of Circle</p>
+        </div>
+      </a>
+      
+      <a href="/areaoftriangle" class="card">
+        <img src="{{ url_for('static', filename='images/triangle.jpg') }}" alt="Work 3">
+        <div class="overlay">
+          <h2>Area of Triangle</h2>
+          <p>Calculate Area of Triangle</p>
+        </div>
+      </a>
+  </section>
+{% endblock %}
