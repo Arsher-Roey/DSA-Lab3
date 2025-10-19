@@ -47,10 +47,34 @@ class LinkedList:
         print(llstr)
         
     def remove_beginning(self):
-        pass
+        if self.head is None:
+            print('Empty Linked List')
+            return
             
-    def remove_at_end(self, index):
-        pass
+        none_do_remove = self.head
+        self.head = self.head.next
+        
+        if self.head is None:
+            self.tail = None
+            
+    def remove_at_end(self):
+        if self.head is None:
+            print('Empty Linked List')
+            return     
+           
+        if self.head == self.tail:
+            self.head = None
+            self.tail = None
+            return
+            
+        current_node = self.head
+        
+        while current_node.next != self.tail:
+            current_node = current_node.next
+            
+        self.tail = current_node
+        
+        self.tail.next = None
         
     def remove_at(self, index):
         if index<0:
@@ -76,7 +100,9 @@ sushi_preparation.insert_at_end("roll")
 sushi_preparation.insert_at_beginning("assemble")
 sushi_preparation.insert_at_beginning("buy goods")
 sushi_preparation.print()
-sushi_preparation.remove_at(-1)
+sushi_preparation.remove_at(0)
 sushi_preparation.print()
-        
-        
+sushi_preparation.remove_beginning()
+sushi_preparation.print()
+sushi_preparation.remove_at_end()
+sushi_preparation.print()
